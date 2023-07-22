@@ -16,11 +16,6 @@ class FilaPrioritaria(FilaBase):
         self.clientes_atendidos.append(cliente_atual)
         return display
 
-    def atualiza_fila(self) -> None:
-        self.reseta_fila()
-        self.gera_senha_atual()
-        self.fila.append(self.senha_atual)
-
     def estatistica(self, dia: str, agencia: str, flag: str) -> dict:
         if flag != 'detail':
             estatistica = {f'{agencia} - {dia}': len(self.clientes_atendidos)}
